@@ -1,0 +1,91 @@
+# Prerequisites
+*.d
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+# Precompiled Headers
+*.gch
+*.pch
+# Debug files
+*.dSYM/
+*.su
+*.DS_Store
+*._.DS_Store
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+# # Shared Objects
+*.dll
+*.so
+*.so.*
+*.dylib
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+*exe/*
+*obj/*
+build/
+src/GDS/build/
+# Custom debug files
+*.debug
+# HFSS results
+*.aedtresults
+*.aedtresults/*
+# Latex auxiliary files
+*.aux
+*.auxlock
+*.synctex
+*.synctex.gz
+*.synctex.gz(busy)
+*.blg
+*.bbl
+*.md5
+*.dpth
+*.dep
+*.tmp
+# Temp Emacs files
+*~
+# Images & documents
+*.png
+*.jpg
+# *.pdf
+# Post-processing
+*.pos
+*.vtp
+# Emacs tags
+*GPATH*
+*GRTAGS*
+*GTAGS*
+# FEKO aux files
+*feko/*.bof
+*feko/*.cfm
+*feko/*.bak
+*feko/*.cgm
+*feko/*.str
+# MGF interpolation tables
+*.mgf
+# Big EMX files
+*emxcurrent.m
+*emxmesh.m
+
+# MPI version ignores - should not build external files from this install directory anyways
+external/builds
+.idea
+install/CMakeFiles/*
+install/CMakeCache.txt
+*.cmake
+install/Makefile
+# Install log
+*install_log.log*
+# Stp files and related
+*.stp
+*.brd
+*.sab

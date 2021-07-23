@@ -1,0 +1,48 @@
+#######################################################################
+# name of library #####################################################
+#######################################################################
+LIBNAME=libAmosBessel
+
+#######################################################################
+# object files that go into the library
+#######################################################################
+OBJS=machcon.o zbsubs.o libAmosBessel.o
+
+#######################################################################
+# dependencies needed to build the library ############################
+#######################################################################
+CPPFLAGS += -I../libhrutil -fPIC -std=c++11 -std=gnu++11
+
+#######################################################################
+# other libraries that are needed if you want to compile and link
+# the test program
+#######################################################################
+LDFLAGS += -L../libhrutil
+OTHER_HR_LIBS=-lhrutil 
+OTHER_3P_LIBS=-lreadline -lm -lgfortran 
+OTHER_LIBS=$(OTHER_HR_LIBS) $(OTHER_3P_LIBS)
+
+#######################################################################
+# default compiler choices
+#######################################################################
+CC=gcc
+CXX=g++
+FC=gfortran
+
+#######################################################################
+# the rest of this file is a boilerplate makefile: 
+#  'make lib'  to build just the library 
+#  'make test' to build the library and the test program
+#######################################################################
+lib:		$(LIBNAME).a
+
+$(LIBNAME).a:	$(OBJS)
+		ar r $@ $^
+
+test:		t$(LIBNAME)
+
+t$(LIBNAME):	t$(LIBNAME).o $(LIBNAME).a
+		$(CXX) $(LDFLAGS) -o $@ $^ $(OTHER_LIBS)
+clean:		
+		rm *.o
+		rm *.a
